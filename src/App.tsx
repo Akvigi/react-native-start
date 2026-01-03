@@ -1,11 +1,10 @@
-import { StatusBar, View } from 'react-native';
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStaticNavigation } from '@react-navigation/native';
 import { StaticParamList } from '@react-navigation/core';
 import ProfileScreen from './screens/ProfileScreen.tsx';
 import HomeScreen from './screens/HomeScreen.tsx';
-import useColors from './hooks/useColors.ts';
 
 const RootStack = createNativeStackNavigator({
   screens: {
@@ -33,18 +32,12 @@ declare global {
 const Navigation = createStaticNavigation(RootStack);
 
 function App() {
-  const colors = useColors();
+  // const colors = useColors();
 
   return (
     <SafeAreaProvider>
-      <View
-        style={{
-          backgroundColor: colors.background,
-        }}
-      >
-        <StatusBar barStyle={'light-content'} />
-        <Navigation />
-      </View>
+      <StatusBar barStyle={'dark-content'} />
+      <Navigation />
     </SafeAreaProvider>
   );
 }
