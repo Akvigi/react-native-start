@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { API_BASE } from '@env';
+import Config from 'react-native-config';
 
 const axiosInstance = axios.create({
-  baseURL: API_BASE,
+  baseURL: Config.API_BASE,
   headers: {
     'Content-Type': 'application/json',
   },
