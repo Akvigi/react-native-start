@@ -4,9 +4,16 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:release": "ENVFILE=.env.prod react-native run-android --mode=release",
+    "android:build": "cd android && ./gradlew assembleRelease",
+    "android:build-prod": "cd android && ENVFILE=.env.prod ./gradlew assembleRelease",
     "ios": "react-native run-ios",
+    "ios:release": "ENVFILE=.env.prod react-native run-ios --mode=Release",
+    "ios:build": "cd ios && xcodebuild -workspace RNProject.xcworkspace -scheme RNProject -configuration Release clean archive -archivePath build/RNProject.xcarchive",
+    "ios:build-prod": "cd ios && ENVFILE=.env.prod xcodebuild -workspace RNProject.xcworkspace -scheme RNProject -configuration Release clean archive -archivePath build/RNProject.xcarchive",
     "lint": "eslint .",
     "start": "react-native start",
+    "start:reset": "react-native start --reset-cache",
     "test": "jest"
   },
   "dependencies": {
