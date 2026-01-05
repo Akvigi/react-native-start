@@ -1,5 +1,5 @@
-import useColors from '../../hooks/useColors.ts';
 import { Button, ButtonProps } from 'react-native';
+import useColors from '@/hooks/useColors.ts';
 
 const UIButton = (props: ButtonProps) => {
   const colors = useColors();

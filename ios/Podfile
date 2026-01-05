@@ -30,5 +30,14 @@ target 'RNProject' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # Add build phase for react-native-config
+    installer.pods_project.targets.each do |target|
+      if target.name == 'react-native-config'
+        target.build_configurations.each do |config|
+          config.build_settings['ENVFILE'] = ENV['ENVFILE'] || '.env'
+        end
+      end
+    end
   end
 end

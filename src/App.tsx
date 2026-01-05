@@ -1,17 +1,16 @@
 import { StatusBar, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import useColors from './hooks/useColors';
-import { Navigation } from './navigation/base.ts';
+import { Navigation } from '@/navigation/base.ts';
+import useColors from '@/hooks/useColors.ts';
+import { appStyles } from '@/App.styles.ts';
 
 function App() {
   const colors = useColors();
 
-  const styles = { flex: 1, backgroundColor: colors.background };
-
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={'dark-content'} />
-      <View style={styles}>
+      <View style={appStyles(colors).viewContainer}>
         <Navigation />
       </View>
     </SafeAreaProvider>

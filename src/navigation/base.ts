@@ -1,8 +1,8 @@
 import { createStaticNavigation } from '@react-navigation/native';
 import { StaticParamList } from '@react-navigation/core';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '@screens/HomeScreen.tsx';
-import ProfileScreen from '@screens/ProfileScreen.tsx';
+import HomeScreen from '@/screens/HomeScreen.tsx';
+import ProfileScreen from '@/screens/ProfileScreen.tsx';
 
 const RootStack = createNativeStackNavigator({
   screens: {
